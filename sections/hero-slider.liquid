@@ -1,0 +1,103 @@
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#lightSlider").lightSlider({
+      item: 1,
+      autoWidth:false,
+      adaptiveHeight: true
+    });
+  });
+</script>
+
+<div class="hero-slider-section">
+  <div class="">
+    <ul id="lightSlider">
+      {% for block in section.blocks %}
+        <li class="hero-slider-section__slide" style="background-image: url('{{ block.settings.image |  img_url: 'master' }}')">
+          <div class="hero-slider-section__caption-wrapper">
+            <div class="hero-slider-section__caption-inner">
+              {% if block.settings.title != 'blank' %}
+                <h2 class="hero-slider-section__title">
+                  {{ block.settings.title }}
+                </h2>
+              {% endif %}
+              {% if block.settings.subheading != 'blank' %}
+                <p class="hero-slider-section__subtitle">
+                  {{ block.settings.subtitle }}
+                </p>
+              {% endif %}
+              {% if block.settings.button_link_url != blank %}
+                <div class="hero-slider-section__button btn">
+                  <a href="{{ block.settings.button_link_url }}">
+                    {{ block.settings.button_text }}
+                   </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Slider",
+  "class": "section-hero-slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub-Title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub-Title"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "text",
+          "id": "button_link_url",
+          "label": "Button Link URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+
+{% endschema %}
