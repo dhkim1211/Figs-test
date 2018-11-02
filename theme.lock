@@ -74,7 +74,7 @@ sections/footer.liquid:
 sections/header.liquid:
   development: 2018-11-02T00:28:27-04:00   ca2f7ac264edacb54abf44820d40b3f5
 sections/hero-slider.liquid:
-  development: 2018-11-02T03:51:40-04:00   306cf746152dc60b6dbd026822c45eb1
+  development: 2018-11-02T17:07:50-04:00   eae93ec9226ebf8ea7c3f61b0ceb855c
 sections/list-collections-template.liquid:
   development: 2018-11-02T00:28:27-04:00   a1366dd3121e920403e3e67b3ea2bb9e
 sections/map.liquid:
@@ -86,7 +86,7 @@ sections/password-content.liquid:
 sections/password-header.liquid:
   development: 2018-11-02T00:28:28-04:00   5329052012e3e64b18f8d7155ed929a8
 sections/product-grid.liquid:
-  development: 2018-11-02T14:32:29-04:00   c7822ff2ca65b4e240982b3a94105ef0
+  development: 2018-11-02T17:21:29-04:00   bd66d61e29f8f289c1e66ff6d5443b98
 sections/product-template.liquid:
   development: 2018-11-02T00:28:28-04:00   0eb4ebda80f62af638db99732ef48822
 sections/sidebar.liquid:
@@ -104,7 +104,7 @@ snippets/comment.liquid:
 snippets/featured-blog.liquid:
   development: 2018-11-02T00:28:31-04:00   0498b92623d6812d7a3dd2290e4bbe76
 snippets/hero-slider-slideshow.liquid:
-  development: 2018-11-02T03:51:22-04:00   c0055baeeb976920708bc871d1f45911
+  development: 2018-11-02T15:48:46-04:00   545c852deeebf141b6d4d87f4a5732d8
 snippets/icon-arrow-down.liquid:
   development: 2018-11-02T00:28:31-04:00   5f04b092b5cf026cd6fab3f33ebdf036
 snippets/icon-arrow-right.liquid:
@@ -159,6 +159,8 @@ snippets/onboarding-featured-blog.liquid:
   development: 2018-11-02T00:28:32-04:00   112c2401c0473fff01bbe7e034661aa8
 snippets/product-description.liquid:
   development: 2018-11-02T00:28:32-04:00   1eeacd0e7951c54eac1d303ee05fa847
+snippets/product-grid-block.liquid:
+  development: 2018-11-02T17:27:24-04:00   5c4b9c46501ea96c5d36bba04b40143e
 snippets/product-grid-item.liquid:
   development: 2018-11-02T00:28:32-04:00   bea5fe33d9ad5e80f8fcf2585b47ad92
 snippets/related-products.liquid:
@@ -200,7 +202,7 @@ templates/list-collections.liquid:
 templates/page.contact.liquid:
   development: 2018-11-02T00:28:33-04:00   d4e3284c89f398f0feab0952f64ca5ac
 templates/page.landing-page.liquid:
-  development: 2018-11-02T12:08:44-04:00   47dabc5b5e19676baefd91d6bac2e1ed
+  development: 2018-11-02T16:55:14-04:00   3c0aef63c4f3664190fd3a8797311d67
 templates/page.liquid:
   development: 2018-11-02T00:28:33-04:00   e1b64d2499164dede0a7c6df21b03f9c
 templates/password.liquid:

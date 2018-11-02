@@ -4,7 +4,11 @@
   </a>
   <div class="product-grid-section__product-info">
     <p class="product-grid-section__product-title">
-      <a href="{{- product.url -}}">{{- product.title -}}</a>
+      {% if section.settings.products_per_row > 3 %}
+        <a href="{{- product.url -}}">{{- product.title | truncatewords: 6, ""-}}</a>
+      {% else %}
+        <a href="{{- product.url -}}">{{- product.title -}}</a>
+      {% endif %}
     </p>
     <p class="product-grid-section__product-price">{{- product.price | money -}}</p>
   </div>
