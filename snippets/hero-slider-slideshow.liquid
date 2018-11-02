@@ -14,7 +14,8 @@
           style="font-size: {{block.settings.title_font_size}}px;
                 letter-spacing: {{block.settings.title_letter_spacing}}px;
                 line-height: {{block.settings.title_line_height}};
-                font-weight: {{block.settings.title_font_weight}};"
+                font-weight: {{block.settings.title_font_weight}};
+                text-transform: {% if block.settings.title_uppercase %} uppercase {% else %} none {% endif %};"
         >
           {{ block.settings.title }}
         </h2>

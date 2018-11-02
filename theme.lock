@@ -74,7 +74,7 @@ sections/footer.liquid:
 sections/header.liquid:
   development: 2018-11-02T00:28:27-04:00   ca2f7ac264edacb54abf44820d40b3f5
 sections/hero-slider.liquid:
-  development: 2018-11-02T17:07:50-04:00   eae93ec9226ebf8ea7c3f61b0ceb855c
+  development: 2018-11-02T17:49:17-04:00   9ef57f3f25ca69aedbe9a9e046ca8a9c
 sections/list-collections-template.liquid:
   development: 2018-11-02T00:28:27-04:00   a1366dd3121e920403e3e67b3ea2bb9e
 sections/map.liquid:
@@ -104,7 +104,7 @@ snippets/comment.liquid:
 snippets/featured-blog.liquid:
   development: 2018-11-02T00:28:31-04:00   0498b92623d6812d7a3dd2290e4bbe76
 snippets/hero-slider-slideshow.liquid:
-  development: 2018-11-02T15:48:46-04:00   545c852deeebf141b6d4d87f4a5732d8
+  development: 2018-11-02T17:49:02-04:00   84b4b11aa33172800a531047283a8de8
 snippets/icon-arrow-down.liquid:
   development: 2018-11-02T00:28:31-04:00   5f04b092b5cf026cd6fab3f33ebdf036
 snippets/icon-arrow-right.liquid:
@@ -160,7 +160,7 @@ snippets/onboarding-featured-blog.liquid:
 snippets/product-description.liquid:
   development: 2018-11-02T00:28:32-04:00   1eeacd0e7951c54eac1d303ee05fa847
 snippets/product-grid-block.liquid:
-  development: 2018-11-02T17:27:24-04:00   5c4b9c46501ea96c5d36bba04b40143e
+  development: 2018-11-02T17:34:17-04:00   e896db748efc779a01f000a6c0d690a5
 snippets/product-grid-item.liquid:
   development: 2018-11-02T00:28:32-04:00   bea5fe33d9ad5e80f8fcf2585b47ad92
 snippets/related-products.liquid:
