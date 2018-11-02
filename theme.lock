@@ -74,7 +74,7 @@ sections/footer.liquid:
 sections/header.liquid:
   development: 2018-11-02T00:28:27-04:00   ca2f7ac264edacb54abf44820d40b3f5
 sections/hero-slider.liquid:
-  development: 2018-11-02T03:39:54-04:00   4049cf37f7d0229a9fc27beb999404c3
+  development: 2018-11-02T03:51:40-04:00   306cf746152dc60b6dbd026822c45eb1
 sections/list-collections-template.liquid:
   development: 2018-11-02T00:28:27-04:00   a1366dd3121e920403e3e67b3ea2bb9e
 sections/map.liquid:
@@ -101,6 +101,8 @@ snippets/comment.liquid:
   development: 2018-11-02T00:28:31-04:00   857825835ca6c43c28ee55e116e4c803
 snippets/featured-blog.liquid:
   development: 2018-11-02T00:28:31-04:00   0498b92623d6812d7a3dd2290e4bbe76
+snippets/hero-slider-slideshow.liquid:
+  development: 2018-11-02T03:51:22-04:00   c0055baeeb976920708bc871d1f45911
 snippets/icon-arrow-down.liquid:
   development: 2018-11-02T00:28:31-04:00   5f04b092b5cf026cd6fab3f33ebdf036
 snippets/icon-arrow-right.liquid:
