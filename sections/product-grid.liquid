@@ -43,6 +43,26 @@
               </div>
             </div>
           </div>
+        {% else %}
+          {% if section.settings.filter_tag_two != blank and product.tags contains section.settings.filter_tag_two %}
+            <div class="product-grid-section__item {{ grid-class }}">
+              <a href="{{-product.url-}}">
+                <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
+              </a>
+              <div class="product-grid-section__product-info">
+                <a href="{{- product.url -}}">
+                  <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
+                </a>
+                <div class="product-grid-section__product-price">
+                  {% if product.price_varies %}
+                    <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
+                  {% else %}
+                    <span>{{- product.price | money -}}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
         {% endif %}
       {% else %}
         <div class="product-grid-section__item {{ grid-class }}">
@@ -50,16 +70,10 @@
             <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
           </a>
           <div class="product-grid-section__product-info">
-            <a href="{{- product.url -}}">
-              <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
-            </a>
-            <div class="product-grid-section__product-price">
-              {% if product.price_varies %}
-                <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
-              {% else %}
-                <span>{{- product.price | money -}}</span>
-              {% endif %}
-            </div>
+            <p class="product-grid-section__product-title">
+              <a href="{{- product.url -}}">{{- product.title -}}</a>
+            </p>
+            <p class="product-grid-section__product-price">{{- product.price | money -}}</p>
           </div>
         </div>
       {% endif %}
@@ -70,6 +84,7 @@
 <style>
   .product-grid-section__title {
     text-align: center;
+    margin-bottom: 30px;
   }
 
   .product-grid-section__item {
@@ -80,8 +95,13 @@
     width: 100%;
   }
 
-  .product-grid-section__product-title {
-    text-transform: uppercase;
+  .product-grid-section__product-info {
+    margin-top: 10px;
+  }
+
+  .product-grid-section__product-title a, .product-grid-section__product-title a:hover {
+    color: #333;
+    opacity: 1;
   }
 </style>
 
@@ -105,13 +125,19 @@
       "type": "checkbox",
       "id": "collection_filter",
       "default": false,
-      "label": "Enable Filtering"
+      "label": "Enable Filtering By Tag"
     },
     {
       "id": "filter_tag",
       "type": "text",
       "label": "Filter Collection By Tag",
       "default": "on_sale"
+    },
+    {
+      "id": "filter_tag_two",
+      "type": "text",
+      "label": "Filter Collection By Tag",
+      "default": "Hoodie"
     },
     {
       "type": "range",
