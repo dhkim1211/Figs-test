@@ -1,12 +1,24 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+{% assign products_per_row = section.settings.products_per_row %}
+{% case products_per_row %}
+  {% when 1 %}
+    {% assign grid-class = 'col-md-12' %}
+  {% when 2 %}
+    {% assign grid-class = 'col-md-6' %}
+  {% when 3 %}
+    {% assign grid-class = 'col-md-4' %}
+  {% when 4 %}
+    {% assign grid-class = 'col-md-3' %}
+{% endcase %}
+
 {% assign collection = collections[section.settings.collection] %}
 {% assign allproducts = all_products %}
 
 <div class="product-grid-section">
   {% if section.settings.title != blank %}
-    <h2 class="product-grid-section__title">{{section.settings.title}}</h2>
+    <h2 class="product-grid-section__title">{{- section.settings.title -}}</h2>
   {% endif %}
   <div class="col-xs-12">
     {% for product in collection.products %}
@@ -14,38 +26,38 @@
 
       {% if section.settings.collection_filter %}
         {% if product.tags contains section.settings.filter_tag %}
-          <div class="product-grid-section__item col-md-4">
-            <a href="{{product.url}}">
-              <img src="{{featured-image | img_url }}" class="product-grid-section__image"/>
+          <div class="product-grid-section__item {{ grid-class }}">
+            <a href="{{-product.url-}}">
+              <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
             </a>
             <div class="product-grid-section__product-info">
-              <a href="{{product.url}}">
-                <p class="product-grid-section__product-title">{{product.title | truncatewords: 5}}</p>
+              <a href="{{- product.url -}}">
+                <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
               </a>
               <div class="product-grid-section__product-price">
                 {% if product.price_varies %}
-                  <span>{{ product.price_min | money }}</span> - <span>{{ product.price_max | money }}</span>
+                  <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
                 {% else %}
-                  <span>{{ product.price | money }}</span>
+                  <span>{{- product.price | money -}}</span>
                 {% endif %}
               </div>
             </div>
           </div>
         {% endif %}
       {% else %}
-        <div class="product-grid-section__item col-md-4">
-          <a href="{{product.url}}">
-            <img src="{{featured-image | img_url }}" class="product-grid-section__image"/>
+        <div class="product-grid-section__item {{ grid-class }}">
+          <a href="{{- product.url -}}">
+            <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
           </a>
           <div class="product-grid-section__product-info">
-            <a href="{{product.url}}">
-              <p class="product-grid-section__product-title">{{product.title | truncatewords: 5}}</p>
+            <a href="{{- product.url -}}">
+              <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
             </a>
             <div class="product-grid-section__product-price">
               {% if product.price_varies %}
-                <span>{{ product.price_min | money }}</span> - <span>{{ product.price_max | money }}</span>
+                <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
               {% else %}
-                <span>{{ product.price | money }}</span>
+                <span>{{- product.price | money -}}</span>
               {% endif %}
             </div>
           </div>
@@ -98,8 +110,17 @@
     {
       "id": "filter_tag",
       "type": "text",
-      "label": "Filter Tag",
+      "label": "Filter Collection By Tag",
       "default": "on_sale"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Products Per Row",
+      "default": 3
     }
   ]
 }
