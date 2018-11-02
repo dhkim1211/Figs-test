@@ -26,56 +26,14 @@
 
       {% if section.settings.collection_filter %}
         {% if product.tags contains section.settings.filter_tag %}
-          <div class="product-grid-section__item {{ grid-class }}">
-            <a href="{{-product.url-}}">
-              <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
-            </a>
-            <div class="product-grid-section__product-info">
-              <a href="{{- product.url -}}">
-                <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
-              </a>
-              <div class="product-grid-section__product-price">
-                {% if product.price_varies %}
-                  <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
-                {% else %}
-                  <span>{{- product.price | money -}}</span>
-                {% endif %}
-              </div>
-            </div>
-          </div>
+          {% include 'product-grid-block' %}
         {% else %}
           {% if section.settings.filter_tag_two != blank and product.tags contains section.settings.filter_tag_two %}
-            <div class="product-grid-section__item {{ grid-class }}">
-              <a href="{{-product.url-}}">
-                <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
-              </a>
-              <div class="product-grid-section__product-info">
-                <a href="{{- product.url -}}">
-                  <p class="product-grid-section__product-title">{{- product.title | truncatewords: 5 -}}</p>
-                </a>
-                <div class="product-grid-section__product-price">
-                  {% if product.price_varies %}
-                    <span>{{- product.price_min | money -}}</span> - <span>{{- product.price_max | money -}}</span>
-                  {% else %}
-                    <span>{{- product.price | money -}}</span>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
+            {% include 'product-grid-block' %}
           {% endif %}
         {% endif %}
       {% else %}
-        <div class="product-grid-section__item {{ grid-class }}">
-          <a href="{{- product.url -}}">
-            <img src="{{- featured-image | img_url -}}" class="product-grid-section__image"/>
-          </a>
-          <div class="product-grid-section__product-info">
-            <p class="product-grid-section__product-title">
-              <a href="{{- product.url -}}">{{- product.title -}}</a>
-            </p>
-            <p class="product-grid-section__product-price">{{- product.price | money -}}</p>
-          </div>
-        </div>
+        {% include 'product-grid-block' %}
       {% endif %}
     {% endfor %}
   </div>

@@ -1,0 +1,11 @@
+<div class="product-grid-section__item {{ grid-class }}">
+  <a href="{{- product.url -}}">
+    <img src="{{- featured-image | img_url: '1024x'-}}" class="product-grid-section__image"/>
+  </a>
+  <div class="product-grid-section__product-info">
+    <p class="product-grid-section__product-title">
+      <a href="{{- product.url -}}">{{- product.title -}}</a>
+    </p>
+    <p class="product-grid-section__product-price">{{- product.price | money -}}</p>
+  </div>
+</div>
