@@ -202,7 +202,7 @@ templates/list-collections.liquid:
 templates/page.contact.liquid:
   development: 2018-11-02T00:28:33-04:00   d4e3284c89f398f0feab0952f64ca5ac
 templates/page.landing-page.liquid:
-  development: 2018-11-02T16:55:14-04:00   3c0aef63c4f3664190fd3a8797311d67
+  development: 2018-11-02T17:57:22-04:00   b666938ccce73318ba6f5e23223b7e9f
 templates/page.liquid:
   development: 2018-11-02T00:28:33-04:00   e1b64d2499164dede0a7c6df21b03f9c
 templates/password.liquid:
