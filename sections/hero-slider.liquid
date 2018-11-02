@@ -21,15 +21,26 @@
                 background-position: {{block.settings.background_position_x}} {{block.settings.background_position_y}};
                 background-color: {{block.settings.background_color}};
         ">
-          <div class="hero-slider-section__caption-wrapper">
+          <div class="hero-slider-section__caption-wrapper"
+          style="text-align: {{block.settings.caption_horizontal}};
+                top: {{block.settings.caption_vertical}}%"
+          >
             <div class="hero-slider-section__caption-inner">
               {% if block.settings.title != 'blank' %}
-                <h2 class="hero-slider-section__title">
+                <h2 class="hero-slider-section__title"
+                  style="font-size: {{block.settings.title_font_size}}px;
+                        letter-spacing: {{block.settings.title_letter_spacing}}px;
+                        line-height: {{block.settings.title_line_height}};"
+                >
                   {{ block.settings.title }}
                 </h2>
               {% endif %}
               {% if block.settings.subheading != 'blank' %}
-                <p class="hero-slider-section__subtitle">
+                <p class="hero-slider-section__subtitle"
+                  style="font-size: {{block.settings.subtitle_font_size}};
+                  letter-spacing: {{block.settings.subtitle_letter_spacing}}px;
+                  line-height: {{block.settings.subtitle_line_height}};"
+                >
                   {{ block.settings.subtitle }}
                 </p>
               {% endif %}
@@ -53,6 +64,22 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .hero-slider-section__caption-wrapper {
+    position: absolute;
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  .hero-slider-section__title {
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .hero-slider-section__button a {
+    color: #fff;
   }
 </style>
 
@@ -117,9 +144,67 @@
           "label": "Title"
         },
         {
+          "type": "range",
+          "id": "title_font_size",
+          "min": 16,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font Size",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "title_letter_spacing",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Letter Spacing",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "title_line_height",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "label": "Title Line Height",
+          "default": 1
+        },
+        {
           "type": "text",
           "id": "subtitle",
           "label": "Sub-Title"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_font_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Sub-title Font Size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "subtitle_letter_spacing",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "unit": "px",
+          "label": "Sub-Title Letter Spacing",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "subtitle_line_height",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "label": "Sub-Title Line Height",
+          "default": 1
         },
         {
           "type": "text",
@@ -130,6 +215,36 @@
           "type": "text",
           "id": "button_link_url",
           "label": "Button Link URL"
+        },
+        {
+          "type": "select",
+          "id": "caption_horizontal",
+          "label": "Caption Horizontal Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "caption_vertical",
+          "min": 5,
+          "max": 50,
+          "step": 5,
+          "unit": "%",
+          "label": "Caption Vertical Position",
+          "default": 35
         }
       ]
     }
