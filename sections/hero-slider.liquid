@@ -45,8 +45,14 @@
                 </p>
               {% endif %}
               {% if block.settings.button_link_url != blank %}
-                <div class="hero-slider-section__button btn">
-                  <a href="{{ block.settings.button_link_url }}">
+                <div class="hero-slider-section__button btn"
+                  style="padding: {{block.settings.button_height}}px {{block.settings.button_width}}px;
+                        background-color: {{block.settings.button_bg_color}};
+                        border-radius: {{block.settings.button_border_radius}}px;"
+                >
+                  <a href="{{ block.settings.button_link_url }}"
+                    style="color: {{block.settings.button_color}};"
+                  >
                     {{ block.settings.button_text }}
                    </a>
                 </div>
@@ -73,13 +79,11 @@
   }
 
   .hero-slider-section__title {
-    font-size: 36px;
-    letter-spacing: 1px;
-    line-height: 1;
+    margin-bottom: 20px;
   }
 
-  .hero-slider-section__button a {
-    color: #fff;
+  .hero-slider-section__subtitle {
+    margin-bottom: 20px;
   }
 </style>
 
@@ -215,6 +219,48 @@
           "type": "text",
           "id": "button_link_url",
           "label": "Button Link URL"
+        },
+        {
+          "type": "range",
+          "id": "button_width",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Button Horizontal Padding",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "button_height",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Button Vertical Padding",
+          "default": 9
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius",
+          "min": 0,
+          "max": 25,
+          "step": 1,
+          "unit": "px",
+          "label": "Button Border Radius",
+          "default": 0
         },
         {
           "type": "select",

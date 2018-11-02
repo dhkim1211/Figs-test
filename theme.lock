@@ -74,7 +74,7 @@ sections/footer.liquid:
 sections/header.liquid:
   development: 2018-11-02T00:28:27-04:00   ca2f7ac264edacb54abf44820d40b3f5
 sections/hero-slider.liquid:
-  development: 2018-11-02T03:23:26-04:00   0fe1a555d6836a8f2e69b91217522049
+  development: 2018-11-02T03:39:54-04:00   4049cf37f7d0229a9fc27beb999404c3
 sections/list-collections-template.liquid:
   development: 2018-11-02T00:28:27-04:00   a1366dd3121e920403e3e67b3ea2bb9e
 sections/map.liquid:
