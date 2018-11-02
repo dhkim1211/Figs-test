@@ -15,7 +15,12 @@
   <div class="">
     <ul id="lightSlider">
       {% for block in section.blocks %}
-        <li class="hero-slider-section__slide" style="background-image: url('{{ block.settings.image |  img_url: 'master' }}')">
+        <li id="slide--{{block.id}}" class="hero-slider-section__slide"
+          style="{% if block.settings.image %}background-image: url({{ block.settings.image |  img_url: 'master' }});{% endif %}
+                height: {{block.settings.slider_height}}px;
+                background-position: {{block.settings.background_position_x}} {{block.settings.background_position_y}};
+                background-color: {{block.settings.background_color}};
+        ">
           <div class="hero-slider-section__caption-wrapper">
             <div class="hero-slider-section__caption-inner">
               {% if block.settings.title != 'blank' %}
@@ -43,26 +48,20 @@
   </div>
 </div>
 
+<style>
+  .hero-slider-section__slide {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+
 {% schema %}
 {
   "name": "Hero Slider",
   "class": "section-hero-slider",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Sub-Title"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text"
-    }
+
   ],
   "blocks": [
     {
@@ -73,6 +72,44 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "slider_height",
+          "min": 200,
+          "max": 800,
+          "step": 10,
+          "unit": "px",
+          "label": "Slider Height",
+          "default": 500
+        },
+        {
+          "type": "select",
+          "id": "background_position_x",
+          "options": [
+            { "value": "left", "label": "Left"},
+            { "value": "center", "label": "Center"},
+            { "value": "right", "label": "Right"}
+          ],
+          "label": "Background Horizontal Position",
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "background_position_y",
+          "options": [
+            { "value": "top", "label": "Top"},
+            { "value": "center", "label": "Center"},
+            { "value": "bottom", "label": "Bottom"}
+          ],
+          "label": "Background Vertical Position",
+          "default": "center"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#ffffff"
         },
         {
           "type": "text",

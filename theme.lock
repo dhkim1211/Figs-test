@@ -26,7 +26,7 @@ config/settings_schema.json:
 layout/password.liquid:
   development: 2018-11-02T00:28:30-04:00   ad505793cf76ef5a7bd827d178ed5a65
 layout/theme.liquid:
-  development: 2018-11-02T00:28:30-04:00   4e7911628ec7bde7bbe9ba269f562a9e
+  development: 2018-11-02T02:25:09-04:00   4e7911628ec7bde7bbe9ba269f562a9e
 locales/da.json:
   development: 2018-11-02T00:28:30-04:00   d033521dcc938ab18544b64f33c49360
 locales/de.json:
@@ -74,7 +74,7 @@ sections/footer.liquid:
 sections/header.liquid:
   development: 2018-11-02T00:28:27-04:00   ca2f7ac264edacb54abf44820d40b3f5
 sections/hero-slider.liquid:
-  development: 2018-11-02T00:39:19-04:00
+  development: 2018-11-02T03:00:01-04:00   da17bf5e80f4632a5a68c0de115f31b2
 sections/list-collections-template.liquid:
   development: 2018-11-02T00:28:27-04:00   a1366dd3121e920403e3e67b3ea2bb9e
 sections/map.liquid:
