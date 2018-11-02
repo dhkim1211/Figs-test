@@ -85,6 +85,8 @@ sections/password-content.liquid:
   development: 2018-11-02T00:28:28-04:00   80ae422a0611c3d010bd21b5af11e99e
 sections/password-header.liquid:
   development: 2018-11-02T00:28:28-04:00   5329052012e3e64b18f8d7155ed929a8
+sections/product-grid.liquid:
+  development: 2018-11-02T14:32:29-04:00   c7822ff2ca65b4e240982b3a94105ef0
 sections/product-template.liquid:
   development: 2018-11-02T00:28:28-04:00   0eb4ebda80f62af638db99732ef48822
 sections/sidebar.liquid:
@@ -198,7 +200,7 @@ templates/list-collections.liquid:
 templates/page.contact.liquid:
   development: 2018-11-02T00:28:33-04:00   d4e3284c89f398f0feab0952f64ca5ac
 templates/page.landing-page.liquid:
-  development: 2018-11-02T00:39:09-04:00   210b56511d1b4a318b33ecb79fbe5fbf
+  development: 2018-11-02T12:08:44-04:00   47dabc5b5e19676baefd91d6bac2e1ed
 templates/page.liquid:
   development: 2018-11-02T00:28:33-04:00   e1b64d2499164dede0a7c6df21b03f9c
 templates/password.liquid:
